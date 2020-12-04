@@ -5,18 +5,22 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import java.util.logging.Logger;
 
 public final class Main extends JavaPlugin {
+
+    Logger logger = getServer().getLogger();
 
     @Override
     public void onEnable() {
         // Plugin startup logic
-
+        logger.info("플러그인이 켜졌습니다.");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        logger.info("플러그인이 꺼졌습니다.");
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
