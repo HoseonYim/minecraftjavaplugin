@@ -1,0 +1,9 @@
+name: MinecraftJavaPlugin
+version: 1.0
+main: com.github.dacoev.minecraftjavaplugin.Main
+api-version: 1.16
+authors: [ dacoev ]
+description: A project I am using to learn how to make minecraft java plugins
+
+commands:
+  Hello:
