@@ -14,13 +14,13 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        logger.info("플러그인이 켜졌습니다.");
+        logger.info("minecraftjavaplugin is on");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        logger.info("플러그인이 꺼졌습니다.");
+        logger.info("minecraftjavaplugin is off");
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
