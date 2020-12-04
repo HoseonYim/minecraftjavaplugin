@@ -33,12 +33,11 @@ public final class Main extends JavaPlugin {
                     return true;
                 }
                 player.sendMessage(ChatColor.RED + "You do not have permission!");
-                return true;
             }
             else{
                 sender.sendMessage("Console!");
-                return true;
             }
+            return true;
         }
 
         return false;
