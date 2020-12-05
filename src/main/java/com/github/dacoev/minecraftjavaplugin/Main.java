@@ -24,6 +24,24 @@ public final class Main extends JavaPlugin {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
+        if(label.equalsIgnoreCase("launch")){
+            if(sender instanceof Player){
+                Player player = (Player) sender;
+                //There are two commands that we could use which is /launch and /launch <number>
+                if(args.length == 0){
+                    //using launch
+                    player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Zooooom!");
+                    player.setVelocity(iyuhk);
+                }
+            }else{
+                sender.sendMessage("console could not use this command");
+                return true;
+            }
+        }
+        return false;
+    }
+    /*
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
         if(label.equalsIgnoreCase("hello")){
             if(sender instanceof Player){
                 Player player = (Player) sender;
@@ -39,7 +57,7 @@ public final class Main extends JavaPlugin {
             }
             return true;
         }
-
         return false;
     }
+    */
 }
