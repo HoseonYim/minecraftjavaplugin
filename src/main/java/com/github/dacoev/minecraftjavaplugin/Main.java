@@ -31,7 +31,7 @@ public final class Main extends JavaPlugin {
                 if(args.length == 0){
                     //using launch
                     player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Zooooom!");
-                    player.setVelocity(iyuhk);
+                    player.setVelocity();
                 }
             }else{
                 sender.sendMessage("console could not use this command");
