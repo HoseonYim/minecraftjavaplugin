@@ -24,15 +24,20 @@ public final class Main extends JavaPlugin {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-        if(label.equalsIgnoreCase("launch")){
+        if(label.equalsIgnoreCase("launch") || label.equalsIgnoreCase("lch")){
             if(sender instanceof Player){
                 Player player = (Player) sender;
                 //There are two commands that we could use which is /launch and /launch <number>
                 if(args.length == 0){
-                    //using launch
+                    //using /launch
                     player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Zooooom!");
-                    player.setVelocity();
+                    player.setVelocity(player.getLocation().getDirection().multiply(2).setY(2));
+                    return true;
                 }
+                //using /launch <number>
+                player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Zooooom!");
+                player.setVelocity(player.getLocation().getDirection().multiply(Integer.parseInt(args[0])).setY(2));
+                return true;
             }else{
                 sender.sendMessage("console could not use this command");
                 return true;

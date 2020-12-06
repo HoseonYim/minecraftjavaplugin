@@ -6,4 +6,5 @@ authors: [ dacoev ]
 description: A project I am using to learn how to make minecraft java plugins
 
 commands:
-  Hello:
+  Launch:
+    aliases: lch
