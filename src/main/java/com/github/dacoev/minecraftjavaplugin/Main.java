@@ -35,8 +35,14 @@ public final class Main extends JavaPlugin {
                     return true;
                 }
                 //using /launch <number>
-                player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Zooooom!");
-                player.setVelocity(player.getLocation().getDirection().multiply(Integer.parseInt(args[0])).setY(2));
+               if(isNum(args[0])){
+                   player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Zooooom!");
+                   player.setVelocity(player.getLocation().getDirection().multiply(Integer.parseInt(args[0])).setY(2));
+               }
+               else{
+                   player.sendMessage(ChatColor.RED + "Usage : /launch <number-value>");
+               }
+
                 return true;
             }else{
                 sender.sendMessage("console could not use this command");
@@ -44,6 +50,16 @@ public final class Main extends JavaPlugin {
             }
         }
         return false;
+    }
+
+    public boolean isNum(String num){
+        try{
+            Integer.parseInt(num);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
     }
     /*
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
