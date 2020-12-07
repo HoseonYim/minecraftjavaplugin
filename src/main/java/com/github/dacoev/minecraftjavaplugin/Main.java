@@ -35,11 +35,11 @@ public final class Main extends JavaPlugin {
                     return true;
                 }
                 //using /launch <number>
-               if(isNum(args[0])){
+               if(isNum(args[0])){//if <number>'s type is int
                    player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Zooooom!");
                    player.setVelocity(player.getLocation().getDirection().multiply(Integer.parseInt(args[0])).setY(2));
                }
-               else{
+               else{//if <number>'s type is not int
                    player.sendMessage(ChatColor.RED + "Usage : /launch <number-value>");
                }
 
@@ -52,6 +52,7 @@ public final class Main extends JavaPlugin {
         return false;
     }
 
+    //This is trying to see when peoples use /launch <number> if the <number>'s type is not int
     public boolean isNum(String num){
         try{
             Integer.parseInt(num);
