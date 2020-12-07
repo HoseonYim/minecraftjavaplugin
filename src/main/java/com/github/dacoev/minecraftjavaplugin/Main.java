@@ -25,7 +25,7 @@ public final class Main extends JavaPlugin {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
         if(label.equalsIgnoreCase("launch") || label.equalsIgnoreCase("lch")){
-            if(sender instanceof Player){
+            if(sender instanceof Player){//only player could use this command
                 Player player = (Player) sender;
                 //There are two commands that we could use which is /launch and /launch <number>
                 if(args.length == 0){
@@ -44,7 +44,7 @@ public final class Main extends JavaPlugin {
                }
 
                 return true;
-            }else{
+            }else{//console couldn't use this command
                 sender.sendMessage("console could not use this command");
                 return true;
             }
