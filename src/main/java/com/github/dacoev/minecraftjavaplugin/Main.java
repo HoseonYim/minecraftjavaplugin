@@ -9,7 +9,6 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         logger.info("minecraftjavaplugin is on");
         this.getCommand("Launch").setExecutor(new Fly());
         this.getCommand("Hello").setExecutor(new Hello());
@@ -17,7 +16,6 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
         logger.info("minecraftjavaplugin is off");
     }
 
