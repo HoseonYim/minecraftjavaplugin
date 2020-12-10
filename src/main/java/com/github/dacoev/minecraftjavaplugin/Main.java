@@ -13,6 +13,7 @@ public final class Main extends JavaPlugin {
         //경고가 떠도 이렇게 하는 것이 좋을 것 같다.
         this.getCommand("Launch").setExecutor(new Fly());
         this.getCommand("Hello").setExecutor(new Hello());
+        this.getCommand("Doctor").setExecutor(new Heal());
     }
 
     @Override
