@@ -14,6 +14,7 @@ public final class Main extends JavaPlugin {
         this.getCommand("Launch").setExecutor(new Fly());
         this.getCommand("Hello").setExecutor(new Hello());
         this.getCommand("Doctor").setExecutor(new Heal());
+        this.getCommand("Doctor").setExecutor(new FlyBoots());
     }
 
     @Override
