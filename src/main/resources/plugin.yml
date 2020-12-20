@@ -10,3 +10,4 @@ commands:
   Launch:
     aliases: lch
   Doctor:
+  flyboots:

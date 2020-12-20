@@ -1,20 +1,25 @@
 package com.github.dacoev.minecraftjavaplugin;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlyBoots implements CommandExecutor {
+public class FlyBoots extends JavaPlugin implements Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -24,7 +29,14 @@ public class FlyBoots implements CommandExecutor {
                 sender.sendMessage("Sorry console you're not allowed to use this command");
             }
             Player player = (Player) sender;
+            if(player.getInventory().firstEmpty() == -1){
+                //inventory is full
+                Location loc = player.getLocation();
+                World world = player.getWorld();
 
+                world.dropItemNaturally(loc, getItem());
+                player.sendMessage(ChatColor.GOLD + "The Minecraft Legends dropped a gift near you.");
+            }
             player.getInventory().addItem(getItem());
             player.sendMessage(ChatColor.GOLD + "The Minecraft Legends gave you a gift");
             return true;
@@ -51,4 +63,6 @@ public class FlyBoots implements CommandExecutor {
 
         return boots;
     }
+
+    public void onJump
 }
