@@ -80,7 +80,14 @@ public class FlyBoots extends JavaPlugin implements Listener {
     @EventHandler
     public void onFall(EntityDamageEvent event){
         if(event.getEntity() instanceof Player){
-            Player
+            Player player = (Player) event.getEntity();
+            if(event.getCause() == EntityDamageEvent.DamageCause.FALL){
+                if(player.getInventory().getBoots() != null)
+                    if(player.getInventory().getBoots().getItemMeta().getDisplayName().contains("Boots of Leaping"))
+                        if(player.getInventory().getBoots().getItemMeta().hasLore()){
+                            event.setCancelled(true);
+                        }
+            }
         }
     }
 }
