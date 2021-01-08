@@ -13,10 +13,11 @@ public final class Main extends JavaPlugin implements Listener{
         logger.info("minecraftjavaplugin is on");
         this.getServer().getPluginManager().registerEvents(this, this);
         //경고가 떠도 이렇게 하는 것이 좋을 것 같다.
-        this.getCommand("Launch").setExecutor(new Fly());
-        this.getCommand("Hello").setExecutor(new Hello());
-        this.getCommand("Doctor").setExecutor(new Heal());
-        this.getCommand("Doctor").setExecutor(new FlyBoots());
+        this.getCommand("launch").setExecutor(new Fly());
+        this.getCommand("hello").setExecutor(new Hello());
+        this.getCommand("doctor").setExecutor(new Heal());
+        this.getCommand("flyboots").setExecutor(new FlyBoots());
+        this.getCommand("startool").setExecutor(new AncientTrident());
     }
 
     @Override

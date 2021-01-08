@@ -25,8 +25,7 @@ public class FlyBoots extends JavaPlugin implements Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        // /flyboots
-        if(label.equalsIgnoreCase("flyboots")){
+        if(label.equalsIgnoreCase("startool")){
             if(!(sender instanceof Player)){
                 sender.sendMessage("Sorry console you're not allowed to use this command");
             }
